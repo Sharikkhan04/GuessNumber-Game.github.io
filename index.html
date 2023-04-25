@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Guess_Number</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        position: relative;
+        background-color: black;
+        color: white;
+        height: 100vh;
+      }
+      .gamename{
+        text-align: center;
+        font-size:2em;
+        margin-top: 20px;
+        font-weight: bolder;
+        color: whitesmoke;
+        text-transform: capitalize;
+      }
+      .input{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin:40px auto;
+        padding: 20px 0;
+        background: transparent;
+      }
+      .input input{
+        width: 100%;
+        margin: 20px auto;
+        padding: 10px 50px 10px;
+        background: transparent;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        background-color: rgb(56, 55, 55);
+        font-size: 1.75em;
+        text-align:center;
+        font-weight: 700;
+        color: whitesmoke;
+      }
+      .input input::placeholder{
+        text-align:center;
+        font-weight: 700;
+        color: whitesmoke;
+        text-transform: capitalize;
+      }
+      .input span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: x-large;
+      }
+      #btn{
+        width: max-content;
+        height: auto;
+        background-color: rgb(215, 46, 83);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      #game-container {
+        position: relative;
+        background: #000;
+        width: 90vw;
+        height: 80vh;
+        border: 2px solid white;
+        border-radius: 13px;
+        animation: mymove1 1s linear infinite;
+        animation-delay: 3ms;
+      }
+      @keyframes mymove1{
+    25% {border-top-color:#d72e53;}
+    50%{border-right-color:#45effe;}
+    75%{border-bottom-color:#45effe;}
+    100%{border-left-color:#f50a0a;}
+}
+      
+      #score {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      #result {
+        position: absolute;
+        bottom: -45px;
+        left: 10px;
+        letter-spacing: 0.94px;
+        font-family: cursive;
+        color: rgb(224, 12, 54);
+        text-transform: capitalize;
+      }
+      #attempt{
+        position: absolute;
+        bottom: -45px;
+        right: 10px;
+        font-weight: 600;
+        color: goldenrod;
+        letter-spacing: 0.54px;
+        text-transform: capitalize;
+      }
+      .note{
+        position: absolute;
+        width: 90vw;
+        bottom: 50px;
+        left: 20px;
+        font-size: 0.78em;
+        text-transform: capitalize;
+        letter-spacing: 0.54px;
+        color: #2ab1ba;
+        text-align: center;
+      }
+      @media (max-width:500px) {
+        .gamename{
+          margin-top: 100px;
+        }
+        .input input{
+          font-size:100%;
+          margin: 30px 0;
+        }
+        #result {
+        bottom: -25px;
+        left: -40px;
+      }
+      #attempt{
+        bottom: -70px;
+        right: -50px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box m-auto mt-5" id="game-container">
+      <h1 class="gamename">Guess Number</h1>
+      <div class="input">
+        <input id="userinput" type="text" name="text" required="required" placeholder="Enter your guess...">
+        <span>UserChoice</span>
+      <input id="btn" type="submit" value="submit" onclick="submit()">
+      <sharik id="result"></sharik>
+      <p id="attempt"></p>
+      </div>
+      <div id="score">Score: 0</div>
+    </div>
+    <p class="note">NOTE : By default computer has generated a random number between 1 to 100, user has to find that number. </p>
+    <script src="guessNumber.js"></script>
+  </body>
+</html>
