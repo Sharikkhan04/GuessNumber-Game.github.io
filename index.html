@@ -34,7 +34,7 @@
         justify-content: center;
         align-items: center;
         width: 70%;
-        margin:40px auto;
+        margin:30px auto;
         padding: 20px 0;
         background: transparent;
       }
@@ -74,6 +74,18 @@
         border-radius: 15px;
         font-weight: 700;
         text-transform: uppercase;
+      }
+      #btn2{
+        width: max-content;
+        height: auto;
+        background-color: rgb(46, 215, 80);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: none;
       }
       #game-container {
         position: relative;
@@ -120,7 +132,7 @@
       .note{
         position: absolute;
         width: 90vw;
-        bottom: 50px;
+        bottom: 70px;
         left: 20px;
         font-size: 0.78em;
         text-transform: capitalize;
@@ -153,11 +165,12 @@
       <div class="input">
         <input id="userinput" type="text" name="text" required="required" placeholder="Enter your guess...">
         <span>UserChoice</span>
-      <input id="btn" type="submit" value="submit" onclick="submit()">
+      <input id="btn" class="submit" type="submit" value="submit" onclick="submit()">
+      <input id="btn2" class="reset" type="reset" value="reset" onclick="reset()">
       <sharik id="result"></sharik>
       <p id="attempt"></p>
       </div>
-      <div id="score">Score: 0</div>
+      <div id="score">Score: </div>
     </div>
     <p class="note">NOTE : By default computer has generated a random number between 1 to 100, user has to find that number. </p>
     <script src="guessNumber.js"></script>
