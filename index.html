@@ -115,8 +115,8 @@
         position: absolute;
         bottom: -45px;
         left: 10px;
-        letter-spacing: 0.94px;
-        font-family: cursive;
+        letter-spacing: 1px;
+        font-family: 'Arial Narrow', Arial, sans-serif;
         color: rgb(224, 12, 54);
         text-transform: capitalize;
       }
@@ -141,19 +141,36 @@
         text-align: center;
       }
       @media (max-width:500px) {
+        #game-container {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        border: 8px solid white;
+        border-radius: 0px;
+        animation: mymove1 1s linear infinite;
+        animation-delay: 10ms;
+      }
         .gamename{
           margin-top: 100px;
         }
+        #score {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
         .input input{
+          width: 80vw;
           font-size:100%;
           margin: 30px 0;
         }
         #result {
-        bottom: -25px;
+        bottom: -45px;
         left: -40px;
       }
       #attempt{
-        bottom: -70px;
+        bottom: -100%;
         right: -50px;
       }
       }
